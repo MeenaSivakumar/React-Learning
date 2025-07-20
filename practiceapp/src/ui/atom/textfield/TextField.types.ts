@@ -1,5 +1,5 @@
 export interface TextFiledProps {
-  onChange: () => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder: string;
   type: string;
   value: string | undefined;
