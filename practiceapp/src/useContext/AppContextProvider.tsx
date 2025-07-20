@@ -14,7 +14,7 @@ import {
 
 export interface UserContextProps {
   email: string;
-  setEmail: Dispatch<SetStateAction<string>>;
+  setEmail:  React.Dispatch<React.SetStateAction<string>>;
   firstName: string;
   setFirstName: Dispatch<SetStateAction<string>>;
   lastName: string;

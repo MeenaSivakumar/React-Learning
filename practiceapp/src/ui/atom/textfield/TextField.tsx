@@ -1,6 +1,6 @@
 import { TextFiledProps } from "./TextField.types";
 
-export const TextField = ({ ...props }: TextFiledProps) => {
+export const TextField = ({...props }: TextFiledProps) => {
   return (
     <div>
       <input

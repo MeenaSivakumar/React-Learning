@@ -6,12 +6,12 @@ import { useNavigate } from "react-router-dom";
 
 export const EmailModule = ({}) => {
   const navigate = useNavigate();
-  const userContext = useContext(UserContext);
-  if(!userContext){
-    return<div>null</div>
-  }
   const [isDisabled, setIsDisabled] = useState(true);
- 
+  const userContext = useContext(UserContext);
+  if (!userContext) {
+    return <div>null</div>;
+  }
+
   const { email, setEmail } = userContext;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,9 +21,10 @@ export const EmailModule = ({}) => {
 
   const handleNext = () => {
     if (userContext?.email.length !== 0) {
-      userContext?.email === "/^[^s@]+@[^s@]+.[^s@]+$/"
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      emailRegex.test(email)
         ? navigate("/nameInfo")
-        : alert("Enter Valid Email");
+        : alert("Enter valid email");
     } else {
       alert("Enter Valid Email");
       setIsDisabled(true);
@@ -35,13 +36,13 @@ export const EmailModule = ({}) => {
       <h4>Enter Your Email</h4>
       <TextField
         value={email}
-        onChange={() => handleChange}
+        onChange={handleChange}
         placeholder="Enter email"
         type="email"
       />
       <Button
         label="Next"
-        onClick={isDisabled ? ()=>{}:handleNext}
+        onClick={isDisabled ? () => {} : handleNext}
         bgColor="grey"
       />
     </div>
