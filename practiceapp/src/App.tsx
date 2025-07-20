@@ -2,9 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import { EmailPage } from "./pages/email_page";
-import { NameDetails } from "./pages/name_info";
-import { SummaryDetails } from "./pages/summary";
+import { EmailPage,NameDetails,SummaryDetails } from "./pages";
 
 function App() {
   return (

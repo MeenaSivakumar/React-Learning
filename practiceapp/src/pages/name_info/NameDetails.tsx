@@ -1,4 +1,4 @@
-import { NameModule } from "../../modules/user_info_form/name";
+import { NameModule } from "../../modules/user_info_form";
 
 export const NameDetails = () => {
   return (

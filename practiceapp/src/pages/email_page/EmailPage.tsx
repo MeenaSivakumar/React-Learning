@@ -1,4 +1,4 @@
-import { EmailModule } from "../../modules/user_info_form/email";
+import { EmailModule } from "../../modules/user_info_form";
 
 export const EmailPage = () => {
   return (
