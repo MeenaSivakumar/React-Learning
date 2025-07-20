@@ -7,13 +7,16 @@ import { useNavigate } from "react-router-dom";
 export const EmailModule = ({}) => {
   const navigate = useNavigate();
   const userContext = useContext(UserContext);
+  if(!userContext){
+    return<div>null</div>
+  }
   const [isDisabled, setIsDisabled] = useState(true);
-
+ 
   const { email, setEmail } = userContext;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
-    setIsDisabled(false);
+    setIsDisabled(email.length === 0);
   };
 
   const handleNext = () => {
@@ -38,7 +41,7 @@ export const EmailModule = ({}) => {
       />
       <Button
         label="Next"
-        onClick={() => !isDisabled && handleNext}
+        onClick={isDisabled ? ()=>{}:handleNext}
         bgColor="grey"
       />
     </div>

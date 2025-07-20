@@ -7,6 +7,9 @@ import { useNavigate } from "react-router-dom";
 export const NameModule = ({}) => {
   const navigate = useNavigate();
   const userInfo = useContext(UserContext);
+  if(!userInfo){
+    return<div>null</div>
+  }
   const [isDisabled, setIsDisabled] = useState(true);
 
   const { firstName, lastName, setFirstName, setLastName } = userInfo;
@@ -46,7 +49,7 @@ export const NameModule = ({}) => {
       />
       <Button
         label="submit"
-        onClick={() => !isDisabled && handleSubmit}
+        onClick={isDisabled ? ()=>{}: handleSubmit}
         bgColor="lightgreen"
       />
     </div>
