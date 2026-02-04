@@ -1,5 +1,6 @@
 export interface ButtonProps{
-    onClick : ()=>void;
+    onClick : (e:React.MouseEvent<HTMLButtonElement>)=>void;
     label:string;
     bgColor:string;
+    name:string;
 }

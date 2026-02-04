@@ -2,20 +2,15 @@ import { ButtonProps } from "./Button.types";
 
 export const Button = ({ ...props }: ButtonProps) => {
   return (
-    <div>
-      <button
-        style={{
-          backgroundColor: props.bgColor,
-          borderRadius: 12,
-          height: 32,
-          width: 80,
-          borderColor:'white',
-          borderBottomColor:'white'
-        }}
-        onClick={props.onClick}
-      >
-        {props.label}
-      </button>
-    </div>
+    <button
+      className={`${props.bgColor}  text-${
+        props.bgColor === "bg-white" ? "black" : "white"
+      } border-2 rounded-full h-6 w-24 border-pink-400 text-xs font-medium `}
+      onClick={props.onClick}
+      id="button"
+      name={props.name}
+    >
+      {props.label}
+    </button>
   );
 };
